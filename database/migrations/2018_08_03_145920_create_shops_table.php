@@ -13,9 +13,14 @@ class CreateShopsTable extends Migration
      */
     public function up()
     {
+        //สร้าง table ชื่อ shop
         Schema::create('shops', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->string('name');
+            $table->string('desc');
             $table->timestamps();
+
         });
     }
 
